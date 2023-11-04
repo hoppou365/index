@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>荒北方連合</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background: #121212; 
+        color: #fff;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+    .hero-section {
+        text-align: center;
+        padding: 100px 0;
+        background: linear-gradient(135deg, #7289DA, #555); 
+    }
+    .hero-section h1 {
+        font-size: 4rem;
+        margin-bottom: 30px;
+    }
+    .discord-icon {
+        font-size: 4rem;
+        color: #7289DA;
+        margin-bottom: 30px;
+        transition: transform 0.3s ease-in-out;
+    }
+    .discord-icon:hover {
+        transform: scale(1.1);
+    }
+    .distribute-btn {
+        font-size: 1.5rem;
+        background-color: #444;
+        border: none;
+        padding: 15px 30px;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+    }
+    .distribute-btn:hover {
+        background-color: #555;
+    }
+    .about-section {
+        padding: 50px 20px;
+        background: #222; 
+        text-align: center;
+    }
+    .about-section h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+    .about-section p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+    }
+    .fade-in-section {
+        opacity: 0;
+        transform: translateY(20vh);
+        visibility: hidden;
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out, visibility 0.6s;
+    }
+    .fade-in-section.is-visible {
+        opacity: 1;
+        transform: translateY(0vh);
+        visibility: visible;
+    }
+</style>
+</head>
+<body>
+
+<div class="hero-section">
+    <h1>荒北方連合</h1>
+    <a href="https://discord.gg/hoppou" target="_blank" class="discord-icon">
+        <i class="fab fa-discord"></i>
+    </a>
+    <br>
+    <button class="distribute-btn" onclick="window.location.href='2.html';">配布サイトに移動</button>
+</div>
+
+<div class="about-section fade-in-section" id="about">
+    <h2>About</h2>
+    <p>第一代荒北方連合がおうどんにより創設されました。ですが3月後には反対派やらぷろむ及びSyoにより弱体化され、共栄圏によりメンバーが全員BANされ完全に崩壊しました。最近らぷろむたちが新しく新荒北方連合を創設しました。</p>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script>
+window.addEventListener('scroll', () => {
+    const section = document.getElementById('about');
+    const sectionTop = section.getBoundingClientRect().top;
+    const triggerBottom = window.innerHeight / 5 * 4; // 画面の80%の位置でトリガー
+
+    if (sectionTop < triggerBottom) {
+        section.classList.add('is-visible');
+    }
+});
+</script>
+</body>
+</html>
